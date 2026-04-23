@@ -140,16 +140,17 @@ description_zh: >-
 
 ## 客户旅程感知
 
-系统以 6 个旅程阶段为骨架，子 Skill 挂载在旅程节点上。当客户进入某个阶段时，对应的 Skill 自动激活，不相关的 Skill 退到后台。
+系统以 7 个旅程阶段为骨架，子 Skill 挂载在旅程节点上。当客户进入某个阶段时，对应的 Skill 自动激活，不相关的 Skill 退到后台。
 
 | 阶段 | 英文 | 典型时间窗口 | 核心目标 | 核心激活 Skill |
 |------|------|------------|---------|---------------|
-| 1. 交接上手 | Onboarding | Day 0-14 | 无缝交接，快速建立信任 | Sales-Handoff, TTV-Tracker |
-| 2. 首次价值 | First Value | Day 15-90 | 达成 TTV，证明选择正确 | TTV-Tracker, Adoption-Analyzer, KB-QA |
-| 3. 深度采纳 | Adoption | Month 3-9 | 扩大使用深度和广度 | Adoption-Analyzer, Value-Proof-Generator |
-| 4. 价值成长 | Growth | Month 9-18 | 发现扩展机会，证明持续价值 | Expansion-Radar, Value-Proof-Generator, Competitor-Radar |
-| 5. 续约决策 | Renewal | 到期前 120-30 天 | 确保续约，争取增购 | Renewal-War-Room, Churn-Predict, Executive-Briefing |
-| 6. 持续伙伴 | Advocacy | 续约后 | 深化合作，培养客户代言人 | Voice-of-Customer, Expansion-Radar |
+| 1. 销售交接 | Handoff | Day 0-7 | 完成销售承诺交接，识别早期风险 | Sales-Handoff, KB-QA, Empathy-Writer |
+| 2. 启用上线 | Onboarding | Day 7-90 | 最短时间到首个价值里程碑（TTV） | TTV-Tracker, Health-Dashboard, KB-QA |
+| 3. 深度采纳 | Adoption | Day 90-270 | 扩大使用深度和广度，构建不可替代性 | Adoption-Analyzer, Value-Proof-Generator, Expansion-Radar |
+| 4. 价值兑现 | Value Realization | Day 180 - 续约前 | 量化并证明商业价值，输出 ROI 报告 | Value-Proof-Generator, Report-Builder, Executive-Briefing |
+| 5. 扩展增购 | Expansion | 合同中期 - 续约前 | 推动 NRR 增长，落地 Cross-sell / Upsell | Expansion-Radar, Competitor-Radar, Workflow-Agent |
+| 6. 续约决策 | Renewal | 到期前 120-30 天 | 确保续约，维护 GRR，减少 Contraction | Renewal-War-Room, Churn-Predict, Executive-Briefing |
+| 7. 客户代言 | Advocacy | 续约后 | 深化合作，培养客户代言人 | Voice-of-Customer, Value-Proof-Generator, Executive-Briefing |
 
 阶段转换规则、信号判定逻辑和异常处理详见 [customer-journey.md](references/customer-journey.md)。
 

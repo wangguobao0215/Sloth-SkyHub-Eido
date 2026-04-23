@@ -7,27 +7,27 @@
 
 ## 一、阶段激活矩阵
 
-下表标注每个 Skill 在客户旅程六阶段中的激活状态（`*` = 激活）。
+下表标注每个 Skill 在客户旅程七阶段中的激活状态（`*` = 激活）。
 
-| # | Skill | Handoff | Onboarding | Adoption | Value Realization | Expansion | Renewal |
-|---|-------|:-------:|:----------:|:--------:|:-----------------:|:---------:|:-------:|
-| 1 | Health-Dashboard | | * | * | * | * | * |
-| 2 | KB-QA | * | * | * | * | * | * |
-| 3 | Voice-of-Customer | | * | * | * | * | * |
-| 4 | Sales-Handoff | * | | | | | |
-| 5 | TTV-Tracker | | * | | | | |
-| 6 | Adoption-Analyzer | | | * | * | | |
-| 7 | Value-Proof-Generator | | | | * | * | * |
-| 8 | Expansion-Radar | | | * | * | * | |
-| 9 | Competitor-Radar | | | | | * | * |
-| 10 | Renewal-War-Room | | | | | | * |
-| 11 | Churn-Predict | | | * | | | * |
-| 12 | Empathy-Writer | * | * | * | * | * | * |
-| 13 | Report-Builder | | | | * | | * |
-| 14 | Workflow-Agent | | * | | | * | * |
-| 15 | Log-Analyzer | | * | * | | | |
-| 16 | Role-Play-Coach | | | * | | | * |
-| 17 | Executive-Briefing | | | | * | * | * |
+| # | Skill | Handoff | Onboarding | Adoption | Value Realization | Expansion | Renewal | Advocacy |
+|---|-------|:-------:|:----------:|:--------:|:-----------------:|:---------:|:-------:|:--------:|
+| 1 | Health-Dashboard | | * | * | * | * | * | |
+| 2 | KB-QA | * | * | * | * | * | * | |
+| 3 | Voice-of-Customer | | * | * | * | * | * | * |
+| 4 | Sales-Handoff | * | | | | | | |
+| 5 | TTV-Tracker | | * | | | | | |
+| 6 | Adoption-Analyzer | | | * | * | | | |
+| 7 | Value-Proof-Generator | | | | * | * | * | * |
+| 8 | Expansion-Radar | | | * | * | * | | |
+| 9 | Competitor-Radar | | | | | * | * | |
+| 10 | Renewal-War-Room | | | | | | * | |
+| 11 | Churn-Predict | | | * | | | * | |
+| 12 | Empathy-Writer | * | * | * | * | * | * | * |
+| 13 | Report-Builder | | | | * | | * | |
+| 14 | Workflow-Agent | | * | | | * | * | |
+| 15 | Log-Analyzer | | * | * | | | | |
+| 16 | Role-Play-Coach | | | * | | | * | |
+| 17 | Executive-Briefing | | | | * | * | * | * |
 
 ---
 
@@ -39,7 +39,7 @@
 
 | 字段 | 值 |
 |------|-----|
-| 适用阶段 | Onboarding -> Renewal（权重随阶段动态调整） |
+| 适用阶段 | 全阶段（权重随阶段动态调整） |
 | 自动化级别 | L2（AI 计算分析，CSM 审核决策） |
 | 状态 | active |
 
@@ -944,10 +944,36 @@ Voice-of-Customer ──→ 反馈信号流入 Health-Dashboard + Churn-Predict
 
 | 级别 | 名称 | 描述 |
 |------|------|------|
-| L1 | 辅助提示 | AI 仅提供提示和建议，CSM 完全手动执行 |
-| L2 | 分析辅助 | AI 完成数据分析和内容生成，CSM 审核决策 |
-| L3 | 自动执行 | AI 自动执行并生成产出，CSM 审核确认后交付 |
-| L4 | 全自动 | AI 全自动运行，仅异常时升级 CSM |
+| L1 | 建议 | AI 仅提供分析和建议，CSM 决策并执行 |
+| L2 | 起草 | AI 生成草稿供审阅，CSM 修改后执行 |
+| L3 | 审批执行 | AI 准备材料，CSM 审批后 AI 执行 |
+| L4 | 半自动 | 低风险操作自动执行，高风险操作等待审批 |
+| L5 | 全自动 | AI 自动执行并报告，CSM 仅监督 |
+
+> 与 SKILL.md 「安全与自动化治理」章节保持一致。
+
+---
+
+## 五、数据类型约束规范
+
+本文档中所有 Skill 输入/输出参数的数据类型统一约束如下：
+
+| 参数类型 | 声明 | 格式约束 | 示例 |
+|---------|------|---------|------|
+| `time_range` | string | 支持 `7d` / `30d` / `90d` / `180d` / `1y` 标准格式；也支持日期区间如 `2026-01-01~2026-03-31` | `30d` |
+| `customer_id` | string | 大小写敏感，不支持空格，建议驼峰或下划线命名 | `customer_001` |
+| `date` | string | ISO-8601 日期格式 `YYYY-MM-DD` | `2026-04-23` |
+| `enum` | string | 仅限定义值列表中的取值，大小写敏感 | `standard` / `deep` |
+| `list` | list[str] | 逗号分隔字符串或 JSON 数组格式 | `["usage", "behavior"]` |
+| `float` | float | 0.0 - 1.0 范围（置信度等），保留两位小数 | `0.85` |
+| `int` | int | 非负整数，部分参数有上限（如置信度阈值 0-100） | `75` |
+| `boolean` | boolean | `true` / `false` 或 `yes` / `no` | `true` |
+| `markdown` | string | 标准 Markdown 格式，支持表格/列表/代码块 | 见各输出示例 |
+
+**校验规则**：
+1. 参数传入时先校验类型和格式，不符合时返回 `400 Bad Request` 等效提示并告知正确格式。
+2. `time_range` 传入无法解析的值时，回退到默认值 `30d` 并标注 `[time_range 格式未识别，使用默认 30d]`。
+3. 日期参数不支持相对描述（如"上周""本月"），必须转换为标准格式后传入。
 
 ---
 
