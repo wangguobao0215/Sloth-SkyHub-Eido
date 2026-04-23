@@ -1,8 +1,11 @@
 ---
-name: Sloth-SkyHub-Eido
+name: sloth-skyhub-eido
 version: 1.0.0
 description: >-
   Customer Success AI Agent Matrix ("SkyHub") — orchestrates 17 specialized child Skills across 6 customer lifecycle stages with 3-tier segmentation, Playbook engine, health scoring, and graceful degradation. Local-first deployment on Obsidian/Markdown knowledge base.
+  Use when managing customer success workflows, onboarding new customers,
+  monitoring customer health scores, handling renewals, or orchestrating the
+  17-skill customer journey matrix.
 description_zh: >-
   客户成功智能体矩阵系统（智胜·天枢）— 以客户旅程为骨架，编排17个专业子Skill，覆盖销售交接到续约的全生命周期，支持三层客户分级、Playbook引擎、健康评分和优雅降级。本地优先部署，基于Obsidian/Markdown知识库。
 ---
