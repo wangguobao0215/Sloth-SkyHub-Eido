@@ -2,7 +2,7 @@
 
 <h1 align="center">Sloth-SkyHub-Eido</h1>
 
-<p align="center">Customer Success AI Agent Matrix ("SkyHub") — orchestrates 17 specialized child Skills across 6 customer lifecycle stages with 3-tier segmentation</p>
+<p align="center">深信 · SkyHub — Customer Success AI Agent Matrix, orchestrates 17 specialized child Skills across 6 customer lifecycle stages with 3-tier segmentation</p>
 
 <p align="center"><img src="https://raw.githubusercontent.com/TreeSlothKing/Sloth-SkyHub-Eido/main/assets/qrcode.jpg" width="140" /><br/><sub>Scan to follow <b>TreeSlothK</b> · Get more AI skills</sub><br/><i>Slow down, go deeper</i></p>
 

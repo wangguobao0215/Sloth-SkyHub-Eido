@@ -2,11 +2,15 @@
 
 <h1 align="center">Sloth-SkyHub-Eido</h1>
 
-<p align="center">客户成功智能体矩阵系统（智胜·天枢）— 以客户旅程为骨架，编排17个专业子Skill，覆盖销售交接到续约全生命周期</p>
+<p align="center">深信 · 客户成功 — 客户成功智能体矩阵系统，以客户旅程为骨架，编排17个专业子Skill，覆盖销售交接到续约全生命周期</p>
 
 <p align="center"><img src="https://raw.githubusercontent.com/TreeSlothKing/Sloth-SkyHub-Eido/main/assets/qrcode.jpg" width="140" /><br/><sub>扫码关注 <b>树懒老K</b> · 获取更多 AI 技能</sub><br/><i>慢一点，深一度</i></p>
 
 ---
+
+## 品名释义
+
+> **深信**——「深」取自树懒老K品牌哲学「慢一点，深一度」，「信」意为信赖、信任。客户成功的根基是深层信赖关系，不是表面的续费数字。深信，以深度信赖构建客户终身价值。
 
 ## 功能概览
 
