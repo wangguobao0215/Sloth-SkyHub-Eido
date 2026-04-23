@@ -26,6 +26,10 @@
 3. **Import Data**: Import existing customer data into `01-Customers/`
 4. **Activate**: Send "SkyHub start" in QoderWork or ask any customer-related question
 
+## Documentation
+
+- [User Guide](references/user-guide.md) — Complete usage manual covering feature details, workflows, best practices, and FAQ
+
 ## Version
 
 Current: **v1.0.0**
